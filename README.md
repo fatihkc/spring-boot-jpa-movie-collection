@@ -1,74 +1,52 @@
-[![Build Status](https://travis-ci.org/batuhaniskr/spring-boot-product-system.svg?branch=master)](https://travis-ci.org/batuhaniskr/spring-boot-product-system)
-# Spring-Boot-Product-System
+# Movie Collection App
 
- Spring Boot Crud Application with Thymeleaf, JPA, Spring Security. 
- 
-# Product System
+Movie Collection App gives you opportunity to explore Spring Boot, Spring Security and JPA! You can use CRUD operations and see how ManyToMany relationship works with Thymeleaf!
 
-This project based on the Spring Boot project and used packages:
+**IMPORTANT:** ManyToMany relationship is not working for now. It will work in a few days I hope. 
 
-<ul>
-<li>Spring Boot</li>
-<li>Spring Data</li>
- <li>Spring Security</li>
-<li>Thymeleaf</li>
-<li>JavaScript</li>
-<li>Maven</li>
-</ul>
+## Technologies
 
-## Installation
+Sprint Boot  
+Maven  
+Thymeleaf  
+Spring Data JPA  
+Spring Security
 
-### 1. Clone the application
+## Manage Settings
 
-<pre> $ git clone https://github.com/batuhaniskr/spring-boot-product-automation.git </pre>
+in src/main/resources we have application.properties file.
 
-### 2. Database Configuration
+**application.properties**
 
-MySQL is used as the database.
-<ul>
-<li> Open src/main/resources/application.properties </li>
-<li> If you run the application locally, change spring.datasource.username and spring.datasource.password as per your mysql installation</li>
-</ul>
-The project is created with Maven.
+    spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+    spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.url=jdbc:mysql://localhost:3306/movieapp
+    spring.datasource.username=root
+    spring.datasource.password=123
 
-### 3. Launch
+Change this file for your database connection.
 
-To run the application through the docker:
+If you want to change initialization of the database for changing genres, languages or user credentials you can do it with;
 
-<pre>mvn clean package</pre>
+    vi /src/main/resources/db/migration
 
-<pre>docker-compose up</pre>
+## Install & Run
 
-or to run the application locally:
+Use these commands.
 
-<pre>mvn clean install</pre>
+    mvn clean install && mvn spring-boot:run
 
-<pre>mvn spring-boot:run</pre>
+Then go to the localhost:8080.
 
-commands run the application.
+**Admin e-mail and password:** admin@movieapp.com:admin
 
-Application runs from localhost:8080/products
 
-There are users of type user and admin.
+## Why Used This Technologies
 
-Admin Credential: 
-<pre>email: admin@gmail.com  password: admin</pre>
+**Sprint Boot:** Spring library is one of the best known libraries in Java world and I can find a lot of information about it. That is why I chose Spring for my project.
 
-İf you try as user, you will get access denied on delete product page. You have to try as admin.
+**Maven:** My project needs to be run without IDE configurations. It also work fine with Spring Boot
 
-The application runs from http://localhost:8080/products
+**Spring Security:** Spring Security is fundamental for login-register system. I can manage which roles can access which pages. Using Spring Security is very simple and this is the main security library for Spring.
 
-## Screenshots
-
-![screen shot 2018-07-18 at 17 41 58](https://user-images.githubusercontent.com/17202632/42925021-56c95f9e-8b35-11e8-8c83-c15dfeb79e62.png)
-<br>
-
-![screen shot 2018-07-11 at 09 19 15](https://user-images.githubusercontent.com/17202632/42553996-cba19d54-84eb-11e8-8538-249de1b23cf0.png)
-<br/>
-
-![screen shot 2018-07-11 at 09 18 59](https://user-images.githubusercontent.com/17202632/42553933-9f32c144-84eb-11e8-8cd3-3cec10c94354.png)
-<br/><br/>
-
-![4](https://user-images.githubusercontent.com/17202632/42084457-614bbca4-7b96-11e8-9303-f5f12572e68f.png)
-
-![6](https://user-images.githubusercontent.com/17202632/42167116-b127082e-7e15-11e8-8cb2-a8b3ddedde89.png)
+**Thymeleaf:** Thymeleaf was not my first decision but Thymeleaf have a lot of tutorials in the internet. I tried VueJS but Thymeleaf have better integration with Spring library.

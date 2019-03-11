@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout.html}">
+<head>
+    <title>Add Movie</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>New Movie</h3>
+        </div>
+        <div class="panel-body">
+            <form th:object="${movie}" th:action="@{save}" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Name"/>
+                </div>
+                <div class="form-group">
+                    <label>Genre</label>
+                        <select class="form-control" th:field="*{genre.genreName}" style="width: 145px">
+                        <option value="">Select Genre</option>
+                        <option th:each="genre : ${genreList}"
+                                th:value="${genre.genreName}"
+                                th:text="${genre.genreName}">
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="text" class="form-control" id="year" th:field="*{year}"
+                           placeholder="Year"/>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" th:field="*{description}"
+                           placeholder="Description"/>
+                </div>
+                <div class="form-group">
+                    <label for="media">Media</label>
+                    <input type="text" class="form-control" id="media" th:field="*{media}"
+                           placeholder="Media"/>
+                </div>
+                <div class="form-group">
+                    <label>Language</label>
+                    <select class="form-control" th:field="*{language.languageName}" style="width: 145px">
+                        <option value="">Select Language</option>
+                        <option th:each="language : ${languageList}"
+                                th:value="${language.languageName}"
+                                th:text="${language.languageName}">
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="stars">Stars</label>
+                    <input type="text" class="form-control" id="stars" th:field="*{stars}"
+                           placeholder="Stars"/>
+                 </div>
+                <button type="submit" class="btn btn-primary" value="Save">Save</button>
+                <a class="btn btn-danger" th:href="@{/movies}">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

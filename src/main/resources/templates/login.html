@@ -11,7 +11,7 @@
 <div layout:fragment="content" th:remove="tag">
     <div class="panel-heading">
         <div class="panel-title text-center">
-            <h1 class="title">Product System</h1>
+            <h1 class="title">Movie Collection</h1>
             <hr/>
         </div>
     </div>
@@ -27,7 +27,7 @@
                                 <h2>LOGIN</h2>
                                 <div th:if="${param.error}">
                                     <div class="alert alert-danger">
-                                        Invalid username or password.
+                                        Invalid email or password.
                                     </div>
                                 </div>
                                 <div th:if="${param.logout}">
@@ -57,7 +57,7 @@
 
                                 <div th:if="${param.success}">
                                     <div class="alert alert-info">
-                                        You've successfully registered to our awesome app!
+                                        You've successfully registered to Movie Collection!
                                     </div>
                                 </div>
 
@@ -69,7 +69,7 @@
 
                                 <div class="form-group"
                                      th:classappend="${#fields.hasErrors('username')}? 'has-error':''">
-                                    <input id="" placeholder="username"
+                                    <input id="" placeholder="E-mail"
                                            class="form-control"
                                            th:field="*{username}"/>
                                     <p class="alert alert-danger"
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="form-group"
                                      th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
-                                    <input id="email" placeholder="E-mail"
+                                    <input id="email" placeholder="Confirm E-mail"
                                            class="form-control"
                                            th:field="*{email}"/>
                                     <p class="alert alert-danger"
@@ -103,18 +103,6 @@
                                            th:field="*{confirmPassword}"/>
                                     <p class="alert alert-danger"
                                        th:each="error : ${#fields.errors('confirmPassword')}"
-                                       th:text="${error}">Validation error</p>
-                                </div>
-                                <div class="form-group"
-                                     th:classappend="${#fields.hasErrors('terms')}? 'has-error':''">
-                                    <input id="terms"
-                                           type="checkbox"
-                                           th:field="*{terms}"/>  
-                                    <label class="control-label" for="terms">
-                                        I agree with the <a href="#">terms and conditions</a> for Registration.
-                                    </label>
-                                    <p class="alert alert-danger"
-                                       th:each="error : ${#fields.errors('terms')}"
                                        th:text="${error}">Validation error</p>
                                 </div>
                                 <div class="form-group">
@@ -148,13 +136,4 @@
         </div>
     </div>
 </div>
-<footer>
-    <div class="container">
-        <div class="col-md-10 col-md-offset-1 text-center">
-            <h6 style="font-size:14px;font-weight:100;color: #fff;">Coded with <i class="fa fa-heart red"
-                                                                                  style="color: #BC0213;"></i> by <a
-                    href="http://hashif.com" style="color: #fff;" target="_blank">Hashif</a></h6>
-        </div>
-    </div>
-</footer>
 </body>
