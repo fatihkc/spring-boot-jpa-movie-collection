@@ -1,4 +1,4 @@
-package com.fatih.movie;
+package com.fatih.movie.Service;
 
 import com.fatih.movie.model.Actor;
 import com.fatih.movie.model.Genre;
@@ -21,7 +21,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
-public class MovieServiceTests {
+public class MovieServiceTest {
 
     @Mock
     private MovieRepository movieRepository;

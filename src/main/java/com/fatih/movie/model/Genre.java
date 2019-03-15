@@ -40,7 +40,7 @@ public class Genre {
     }
 
     public void setMovie(Movie movie) {
-        if (movieSet.size() == 0) {
+        if (movieSet == null ) {
             movieSet = new HashSet<>();
         }
         movieSet.add(movie);
