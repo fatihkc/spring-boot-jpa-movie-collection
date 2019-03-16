@@ -3,16 +3,10 @@ package com.fatih.movie.Service;
 import com.fatih.movie.model.Genre;
 import com.fatih.movie.repository.GenreRepository;
 import com.fatih.movie.service.GenreService;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.junit4.SpringRunner;
-
-
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.mockito.Mockito.when;
